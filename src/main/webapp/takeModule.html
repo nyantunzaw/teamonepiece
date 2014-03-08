@@ -19,6 +19,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/orbit-1.2.3.css">
         <link rel="stylesheet" href="css/popup.css">
         <script src="js/bootstrap.js"></script>
+        <script src="js/timer.js"></script>
     </head>
     <body padding-bottom:55px>
         <div class="row">
@@ -53,6 +54,15 @@ and open the template in the editor.
                 <div style="float:left;"> 
                    <h1>Module Name : Supporting IST</h1>
                 </div>
+           </td>
+         </tr>
+         <tr>
+             <td height="50%" width="70%" valign="middle" align="center">
+                 
+                 <div align="center"> 
+                     <font style=" font-size:1.4em"> Time remaining:</font> <font style="font-weight:bold; font-size:1.4em" id="timer">00:10</font>
+                </div>
+                 
            </td>
          </tr>
         </table>
@@ -143,6 +153,12 @@ and open the template in the editor.
                   overlay.style.display = "none";
                   popup.style.display = "none";      
             }
+            
+            var button = $('#congrats');
+            button.attr('disabled', 'disabled');
+            setTimeout(function() {
+                 button.removeAttr('disabled');
+            },10000);
           };
 
        </script>
