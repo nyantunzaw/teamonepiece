@@ -1,0 +1,746 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Edit Quiz</title>
+        <!--<meta name="viewport"> THIS IS TO TEST FOR RESOLUTION COMPRESSION content="width=device-width, initial-scale=1.0">-->
+        <link href="css/custombootstrap.css" rel="stylesheet">
+        <link href="css/jumbotron-narrow.css" rel="stylesheet">
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    </head>
+
+
+    <!-- Top Navbar- Needs to be replaced-->
+    <body>
+        <div class="navbar navbar-custom navbar-static-top">
+            <div class="col-md-8">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <img src="img/bplogo.jpg" width="25" height="30"> &nbsp;
+                        <font color="white"> BP Employee Training Portal</font>
+                    </div>  
+                </div>
+            </div>
+        
+        
+            <!--Within Navbar spacing-->
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            
+            <!-- To write the employee's / trainee's name -->
+            <div class="col-md-2">
+                <font color="white"> Welcome Kelvin Chua!</font>
+                <br/>
+                <br/>
+                <span class="glyphicon glyphicon-home"></span>
+                <a href="trainerViewModule.html" style="color: #FFFFFF">Home</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="glyphicon glyphicon-off"></span>
+                <a href="login.jsp" style="color: #FFFFFF">logout</a>
+
+            </div>
+        </div>
+
+        <!--Bottom Navbar. Add body (alr added) to add padding so that it doesn't cut off content>        
+        <div class="navbar navbar-custom navbar-fixed-bottom body">
+            <div class = "container">
+                <div class="text-center">
+                    <a href="QuizCreated.html" class ="navbar-btn btn-primary btn">Save and Submit</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="trainerViewModule.html" class ="navbar-btn btn-danger btn">Cancel</a>
+                </div>
+            </div>
+        </div> <!--End of Fixed Navbar div (at the bottom)-->
+
+        <!-- Jumbotrons are good to highlight content whitewell helps get rid of the grey color jumbotron has by default-->
+        <div class="container">
+            <div class="jumbotronChibi whitewell">
+                <div class="text-center">
+                    <h3>
+                        Edit Quiz
+                        <font size="2"> </font>
+                    
+                    </h3>
+                </div>
+            </div>
+        </div> <!--End of jumbotron division-->
+
+        <br/>
+        <br/>
+
+        <div class="container"> 
+            <div class="text-right">
+            Passing Marks: <input type="text" value="" name="passingMarks" placeholder="Enter passing marks"/>
+                <br/>
+                <br/>
+
+                <p>Date: <input type="date" id="datepicker"></p>
+            </div>
+        </div>
+
+        <!--This division contains a question as well as its type and number of options-->
+        <div class="container" id="mainQuestion1">
+            <!--Division for spacing--> 
+            <div class="col-md-1 ">
+            </div><!--End of division for spacing-->
+
+            <!--This is the little box that contains the question type on the left of the screen-->
+            <div class="col-md-2 whiteWell" id="questionTypeSpace1">
+                
+                <!--Division to include Question Type-->
+                <div class="center-text">
+                    <h4>Question Type</h4>
+                </div>
+                <!--End of division for Question Type-->
+
+                <br />
+
+                <!--Form to grab details from question type-->
+                <form action="" id="questionType1" name="questionType">
+                    <input type="radio" id="truefalse1" name="question" onclick="refreshAnswersForRadio(this)" value="truefalse">&nbsp;True/False
+                    <br /> 
+                    <br /> 
+                    <input type="radio" id="mcq1" name="question" onclick="refreshAnswersForMCQ(this)" value="mcq"checked>
+                    &nbsp;Multiple Choice
+                </form>
+                <!-- end of the form. -->
+            </div>
+            <!--End of question type space division-->
+
+            <!--Division for details pertaining to question number, answer choice etc.-->
+            <div class="col-md-6 " id="questionDetail1">
+
+                <!--Question Number division-->
+                <div class="text-center">
+                    <h4>Question number</h4>
+                </div>
+                <!--End of Question Number Division-->
+
+                <br/>
+                <br/>
+
+                <!--Division to add space-->
+                <div class="col-md-4">
+                </div>
+                <!--End of division to add space-->
+
+                <!--Question itself and the choices pertaining to the question are in this div-->
+                <div class="col-md-6 text-left" id="questionContent1">
+                    
+                    <!--Enter your question here-->
+                    Q: &nbsp;<input type="text" name="question" value="What is Apple?">
+                    
+                    <br/>
+                    <br/>                    
+
+                    <!--This division is to put in answer choices-->
+                    <div id="answerChoices1">
+                        <input type="radio" id = "radioChoice1" name="radio">&nbsp;
+                        <input type="text" id="questionChoice1" name="questionChoice1" value="Airline Company" >
+                        <br/>
+                        <br/>
+                        <input type="radio" id="radioChoice2" name="radio" value="" checked>&nbsp;
+                        <input type="text" id="questionChoice2" name="questionChoice2" value="Electronics Company"  >
+                        <br/>
+                        <br/>
+                        <input type="radio" id="radioChoice3" name="radio" value="">&nbsp;
+                        <input type="text" id="questionChoice3" name="questionChoice3" value="Cleaning Company" >     
+                        <br/>
+                        <br/>
+                        <input type="radio" id="radioChoice4" name="radio" value="">&nbsp;
+                        <input type="text" id="questionChoice4" name="questionChoice4" value="Gym" > 
+                        <br/>
+                        
+                    </div>
+                    <!--End of answerChoices tag-->
+
+                    <!--Here is where you can add and delete options-->
+                    <br/>
+                    <a onclick="addOption(this)">[Add Option]</a>
+                    <a onclick="deleteOption(this)">[Delete Option]</a> 
+                </div>
+                <!--End of questionContent div-->
+
+            </div>
+            <!--End of division questionDetail-->
+
+            <!--Division to add space-->
+            <div class="col-md-4 text-right"></div>
+            <!--End of division to add space-->
+            
+            <!--Division to Add Remove questions-->
+            <div class="col-md-4 text-right" id="addRemoveQuestions">
+                <br/>
+                <br/>
+                <form id="none5">
+                    <input type="button" value="Add Question" onclick="addQuestion()"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <input type="button" value="Remove Question" id="none" onclick="removeQuestion(this)">
+                </form>
+                <br/>
+                <br/>
+            </div>
+            <!--End of division to add or remove questions-->
+        </div>
+        <!--End of main question division-->
+
+        <!--To add-->
+        <!--1. Vanilla division for adding choices-->
+        <div id="addChoicesQuestionRadioChoice" style="display:none;">
+            
+            <input type="radio" id="radioChoice" name="radio">
+            <input type="text"  id="questionChoice" name="questionChoice" value=""  placeholder="Enter your choice here">
+            
+        </div>
+
+        <!--2. Vanilla division for adding true false questions-->
+        <div class="col-md-6 text-left" id="questionContentTrueFalse" style="display:none;">
+            <!--Enter your question here-->
+            Q: &nbsp;<input type="text" id="question" name="question" value="" placeholder="Enter your question here">
+            <br/>
+            <br/>
+            <div id="answerChoice" >
+                <input type="radio" id="radioChoice" name="radio">&nbsp;
+                <input type="text"  id="questionChoice" name="questionChoice" value="" placeholder="Enter your choice here">
+                <br/>
+                <br/>
+                <input type="radio" id="radioChoice" name="radio" value="">&nbsp;
+                <input type="text" id="questionChoice" name="questionChoice" value="" placeholder="Enter your choice here">
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <!--End of vanilla division for truefalse-->
+
+        <!--3. Vanilla division for adding MCQ questions-->
+        <div class="col-md-6 text-left" id="questionContentMCQ" style="display:none;">
+            <!--Enter your question here-->
+            Q: &nbsp;<input type="text" id="question" name="question" value="" placeholder="Enter your question here">
+                    
+            <br/>
+            <br/>                    
+        
+            <div id="answerChoice">
+                <input type="radio" id="radioChoice" name="radio">&nbsp;
+                <input type="text"  id="questionChoice" name="questionChoice" value="" placeholder="Enter your choice here">
+                <br/>
+                <br/>
+                <input type="radio" id="radioChoice" name="radio" value="">&nbsp;
+                <input type="text" id="questionChoice" name="questionChoice" value="" placeholder="Enter your choice here">
+                <br/>
+                <br/>
+                <input type="radio" id="radioChoice" name="radio" value="">&nbsp;
+                <input type="text" id="questionChoice" name="questionChoice" value="" placeholder="Enter your choice here">
+                <br/>
+                <br/>
+                <input type="radio" id="radioChoice" name="radio" value="">&nbsp;
+                <input type="text" id="questionChoice" name="radio" value="" placeholder="Enter your choice here"> 
+                <br/>
+                <br/>
+            </div>
+
+            <!--Here is where you can add and delete options-->
+            <br/>
+            <a onclick="addOption(this)">[Add Option]</a>
+            <a onclick="deleteOption(this)">[Delete Option]</a> 
+        </div>
+        <!--End of vanilla division for MCQ-->
+
+        <!--4. Vanilla division for a whole question -->
+        <div class="container" id="mainQuestion" style="display:none";>
+            <!--Division for spacing--> 
+            <div class="col-md-1 ">
+            </div><!--End of division for spacing-->
+
+            <!--This is the little box that contains the question type on the left of the screen-->
+            <div class="col-md-2 whiteWell" id="questionTypeSpace">
+                
+                <!--Division to include Question Type-->
+                <div class="center-text">
+                    <h4>Question Type</h4>
+                </div>
+                <!--End of division for Question Type-->
+
+                <br />
+
+                <!--Form to grab details from question type-->
+                <form action="" id="questionType" name="questionType">
+                    <input type="radio" id="truefalse" name="question" onclick="refreshAnswersForRadio(this)" value="truefalse">&nbsp;True/False
+                    <br /> 
+                    <br /> 
+                    <input type="radio" id="mcq" name="question" onclick="refreshAnswersForMCQ(this)" value="mcq"checked>
+                    &nbsp;Multiple Choice
+                </form>
+                <!-- end of the form. -->
+            </div>
+            <!--End of question type space division-->
+
+            <!--Division for details pertaining to question number, answer choice etc.-->
+            <div class="col-md-6 " id="questionDetail">
+
+                <!--Question Number division-->
+                <div class="text-center">
+                    <h4>Question number</h4>
+                </div>
+                <!--End of Question Number Division-->
+
+                <br/>
+                <br/>
+
+                <!--Division to add space-->
+                <div class="col-md-4">
+                </div>
+                <!--End of division to add space-->
+
+                <!--Question itself and the choices pertaining to the question are in this div-->
+                <div class="col-md-6 text-left" id="questionContent">
+                    
+                    <!--Enter your question here-->
+                    Q: &nbsp;<input type="text" id="question" name="question" value="" placeholder="Enter your question here">
+                    
+                    <br/>
+                    <br/>                    
+
+                    <!--This division is to put in answer choices-->
+                    <div id="answerChoices">
+                        <input type="radio" id="radioChoice" name="radio">&nbsp;
+                        <input type="text"  id="questionChoice" name="questionChoice" value="" placeholder="Enter your choice here">
+                        <br/>
+                        <br/>
+                        <input type="radio" id="radioChoice" name="radio" value="">&nbsp;
+                        <input type="text" id="questionChoice" name="questionChoice" value="" placeholder="Enter your choice here">
+                        <br/>
+                        <br/>
+                        <input type="radio" id="radioChoice" name="radio" value="">&nbsp;
+                        <input type="text" id="questionChoice" name="questionChoice" value="" placeholder="Enter your choice here">     
+                        <br/>
+                        <br/>
+                        <input type="radio" id="radioChoice" name="radio" value="">&nbsp;
+                        <input type="text" id="questionChoice" name="radio" value="" placeholder="Enter your choice here"> 
+                        <br/>
+                        <br/>
+                    </div>
+                    <!--End of answerChoices tag-->
+
+                    <!--Here is where you can add and delete options-->
+                    <br/>
+                    <a onclick="addOption(this)">[Add Option]</a>
+                    <a onclick="deleteOption(this)">[Delete Option]</a> 
+
+                </div>
+                <!--End of questionContent div-->
+
+            </div>
+            <!--End of division questionDetail-->
+
+            <!--Division to add space-->
+            <div class="col-md-4 text-right"></div>
+            <!--End of division to add space-->
+            
+            <!--Division to Add Remove questions-->
+            <div class="col-md-4 text-right" id="addRemoveQuestions">
+                <br/>
+                <br/>
+                <form id="none5">
+                    <input type="button" value="Add Question" onclick="addQuestion()"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <input type="button" value="Remove Question" id="removeQuestion" onclick="removeQuestion(this)">
+                </form>
+                <br/>
+                <br/>
+            </div>
+            <!--End of division to add or remove questions-->
+        </div>
+        <!--End of main question division-->
+
+    </body>
+
+    <!--All JavaScript methods are here-->
+    <!--Using simple javascript only at this point.-->
+    <script type="text/javascript">
+        var i =1;
+        var k = 5;
+        function addQuestion(){
+            /*
+            * Get the vanilla version of main question.
+            * clone it
+            * get all element tags within the clone
+            * iterate through all
+            */
+            var original = document.getElementById('mainQuestion');
+            var clone = original.cloneNode(true); // "deep" clone
+            clone.id = "mainQuestion" + ++i; // there can only be one element with an ID
+            var divTags = clone.getElementsByTagName("*");
+            var iter = 0;
+            //var k = 1;
+            /*
+            * iterate through all divTags.
+            * when you encounter radioChoice and questionChoice, the code should change the IDs keeping in mind the radio button and answer pairs
+            */
+            while(iter < divTags.length){
+                if((divTags[iter].id.indexOf("radioChoice") != -1) || (divTags[iter].id.indexOf("questionChoice")) != -1){
+                    var toReplace = divTags[iter];
+                    divTags[iter].id += k;
+                    clone.replaceChild(toReplace , divTags[iter]);
+                    /*
+                    * This is to ensure that each radio button and answer box pair have the same id number attached
+                    */
+                    if(iter%2==0){
+                        k++;
+                    }
+                }
+                else{
+                    /*
+                    * This is a normal scenario in which you want to replace the number at the end of the id.
+                    */
+                    var toReplace = divTags[iter];
+                    divTags[iter].id += i;
+                    clone.replaceChild(toReplace , divTags[iter]);
+                }
+                iter++;
+            }
+            /* 
+            * you need to change the visibility to block in order to make the cloned divisions visible.
+            * note that the vanilla divisions are hidden.
+            * Just appending the clone to the document's DOM.
+            */
+            original.parentNode.appendChild(clone);
+            document.getElementById(clone.id).style.display = 'block';
+            document.getElementById('addRemoveQuestions2').focus();
+        }
+
+        /*
+        * This method is to remove a division's parent division thereby exterminating itself along with its siblings.
+        * in other words- badass
+        */
+        function removeQuestion(div){
+            var parent = findIdOfParent(div);
+            var divs = document.getElementsByTagName("div"), item;
+            var countNo = 0;
+
+            for (var l = 0, len = divs.length; l < len; l++) {
+                item = divs[l];
+                if (item.id && item.id.indexOf("mainQuestion") == 0) {
+                    countNo++;        
+                }
+            }
+            if(countNo > 2){
+                document.getElementById(parent.id).remove();    
+            }
+            else{
+                alert("Can't delete the last question");
+            }
+        }
+            
+
+        /*
+        * This method aids in finding who is the parent of the one hitting the self destruct button
+        */
+        function findIdOfParent(obj) {
+            var o = obj;
+            var prev;
+            while(o != null) {
+                if(o.parentNode==null || o.parentNode.id == ""){
+                    prev=o;
+                    break;
+                }
+                o=o.parentNode;
+            }
+            return prev;
+        }   
+
+        /*
+        * This method is to change the choices of a particular question to an MCQ format.
+        */
+        function refreshAnswersForMCQ(div){
+            /*
+            * We need to get the suffix from the parent who will soon see massive changes 
+            */
+            var parent = findIdOfParent(div);
+            var suffix = extractNumberFromString(parent.id);
+            
+
+            /*
+            * contains all the tags inside of parent- mainQuestionx
+            */
+            var divTags = parent.getElementsByTagName("*");
+            var flag = true;
+            var inputSeriesSuffix;
+            /*
+            * This loop is to get the number from which the radio choices and the question choices start.
+            * it is alright if we break it right after we encounter radio choice
+            * progression is simple after we get the initial number
+            */
+            for(var p=0; flag == true; p++){
+                if(divTags[p].id.indexOf("radioChoice") != -1){ //if it matches
+                    inputSeriesSuffix = extractNumberFromString(divTags[p].id);
+                    flag = false;
+                    break;
+                }
+            }
+            
+            var iter = 0;
+            /*
+            * This clone should contain the true false vanilla division
+            */
+            var clone;
+            /*
+            * This var should contain the division which is to be replaced insode of the questionContent div
+            */
+            var toBeReplaced;
+            /*
+            * in this loop, we must find questionContentx and replace it with vanilla truefalse
+            */
+            var secondaryIter = 0;
+            
+            
+            while(iter < divTags.length){
+                if(divTags[iter].id.indexOf("questionContent") != -1){
+                    /*
+                    * This is when the questionContent Div is found
+                    * Now we must get the truefalse vanilla division: ID is questionContentTrueFalse
+                    */
+                    clone = document.getElementById("questionContentMCQ").cloneNode(true);
+                    clone.id = "questionContent"+suffix;
+            
+                    /*
+                    * This takes in the div of questionContent which is to be replaced
+                    */
+                    toBeReplaced = divTags[iter];
+                    var immediateParentOfToBeReplaced = toBeReplaced.parentNode;
+                    
+                    /*Must now change the number suffixes inside of clone which is still vanilla in nature*/
+                    var cloneInnards = clone.getElementsByTagName("*");
+
+                    /*
+                    * This is to change the ids of radioChoice and questionChoice in the clone
+                    */
+                    while(secondaryIter < cloneInnards.length){
+                        /*
+                        * whichever tag doesn't match radioChoice or questionChoice must go throuh the pain of having a suffix attached
+                        */
+                        if((cloneInnards[secondaryIter].id.indexOf("radioChoice") == -1) && (cloneInnards[secondaryIter].id.indexOf("questionChoice") == -1)){ // doesnt match
+                            cloneInnards[secondaryIter].id += suffix;    
+                        }
+                        else{
+                            /*
+                            * This is when you have radio choice and question choice
+                            * You need to add in an inputSeriesSuffix (remember we had taken the starting point of the radioChoice tag element earlier?)
+                            */
+                            
+                            cloneInnards[secondaryIter].id += inputSeriesSuffix;
+                            /*
+                            * This is to ensure that each radio button and each corresponding text field have the same suffixes.
+                            */
+                            if(secondaryIter%2!=0){
+                                inputSeriesSuffix ++;
+                            }
+                        }
+                        secondaryIter++;
+                    }
+                    clone.style.display='block';
+                    immediateParentOfToBeReplaced.replaceChild(clone,toBeReplaced);
+                    
+                    break;
+                }
+                iter++;
+            }
+        }
+
+
+    function refreshAnswersForRadio(div){
+         /*
+         * We need to get the suffix from the parent who will soon see massive changes 
+         */
+            var parent = findIdOfParent(div);
+            var suffix = extractNumberFromString(parent.id);
+            
+
+            /*
+            * contains all the tags inside of parent- mainQuestionx
+            */
+            var divTags = parent.getElementsByTagName("*");
+            var flag = true;
+            var inputSeriesSuffix;
+            /*
+            * This loop is to get the number from which the radio choices and the question choices start.
+            * it is alright if we break it right after we encounter radio choice
+            * progression is simple after we get the initial number
+            */
+            for(var p=0; flag == true; p++){
+                if(divTags[p].id.indexOf("radioChoice") != -1){ //if it matches
+                    inputSeriesSuffix = extractNumberFromString(divTags[p].id);
+                    flag = false;
+                    break;
+                }
+            }
+            
+            var iter = 0;
+            /*
+            * This clone should contain the true false vanilla division
+            */
+            var clone;
+            /*
+            * This var should contain the division which is to be replaced insode of the questionContent div
+            */
+            var toBeReplaced;
+            /*
+            * in this loop, we must find questionContentx and replace it with vanilla truefalse
+            */
+            var secondaryIter = 0;
+            
+            
+            while(iter < divTags.length){
+                if(divTags[iter].id.indexOf("questionContent") != -1){
+                    /*
+                    * This is when the questionContent Div is found
+                    * Now we must get the truefalse vanilla division: ID is questionContentTrueFalse
+                    */
+                    clone = document.getElementById("questionContentTrueFalse").cloneNode(true);
+                    clone.id = "questionContent"+suffix;
+            
+                    /*
+                    * This takes in the div of questionContent which is to be replaced
+                    */
+                    toBeReplaced = divTags[iter];
+                    var immediateParentOfToBeReplaced = toBeReplaced.parentNode;
+                    
+                    /*Must now change the number suffixes inside of clone which is still vanilla in nature*/
+                    var cloneInnards = clone.getElementsByTagName("*");
+
+                    /*
+                    * This is to change the ids of radioChoice and questionChoice in the clone
+                    */
+                    while(secondaryIter < cloneInnards.length){
+                        /*
+                        * whichever tag doesn't match radioChoice or questionChoice must go throuh the pain of having a suffix attached
+                        */
+                        if((cloneInnards[secondaryIter].id.indexOf("radioChoice") == -1) && (cloneInnards[secondaryIter].id.indexOf("questionChoice") == -1)){ // doesnt match
+                            cloneInnards[secondaryIter].id += suffix;    
+                        }
+                        else{
+                            /*
+                            * This is when you have radio choice and question choice
+                            * You need to add in an inputSeriesSuffix (remember we had taken the starting point of the radioChoice tag element earlier?)
+                            */
+                            
+                            cloneInnards[secondaryIter].id += inputSeriesSuffix;
+                            /*
+                            * This is to ensure that each radio button and each corresponding text field have the same suffixes.
+                            */
+                            if(secondaryIter%2!=0){
+                                inputSeriesSuffix ++;
+                            }
+                        }
+                        secondaryIter++;
+                    }
+                    clone.style.display='block';
+                    immediateParentOfToBeReplaced.replaceChild(clone,toBeReplaced);
+                    
+                    break;
+                }
+                iter++;
+            }
+    }
+
+
+    function extractNumberFromString(str){
+        var thenum = str.replace( /^\D+/g, '');
+        
+        return thenum;
+    }
+
+    function addOption(div){
+        var parent = findIdOfParent(div);
+        /*
+        * This loop is to get the number from which the radio choices and the question choices start.
+        * it is alright if we break it right after we encounter radio choice
+        * progression is simple after we get the initial number
+        */
+        var flag = true;
+        var inputSeriesSuffix;
+        var divTags = parent.getElementsByTagName("*");
+        for(var p=divTags.length-1; flag == true; p--){
+
+            if(divTags[p].id.indexOf("questionChoice") != -1 ){ //if it matches
+                inputSeriesSuffix = extractNumberFromString(divTags[p].id);
+                
+                flag = false;
+                break;
+            }
+        }
+        
+        var divOption;
+        var iter = 0;
+
+        /*
+        * Get the division- answerChoices
+        * Will help in further operations
+        */
+        while(iter < divTags.length){
+            if(divTags[iter].id.indexOf("answerChoices") != -1){
+                divOption = divTags[iter];
+                break;
+            }
+            iter++;
+        }
+     
+        //Get all elements with the tag INPUT
+        var divs = parent.getElementsByTagName("input");
+
+        var divElement = document.getElementById("addChoicesQuestionRadioChoice").cloneNode(true);
+        var divElementTags = divElement.getElementsByTagName("*");
+        
+        divElementTags[0].id += inputSeriesSuffix;
+        divElementTags[1].id += inputSeriesSuffix;
+        k++;
+        var divElementOne = divElementTags[0].cloneNode(true);
+        var divElementTwo = divElementTags[1].cloneNode(true);
+        
+        //This might lead to problems of spacing. Spacing must be done inside the div itself. 
+        //when the div gets deleted the spacing gets deleted too :)
+        //document.getElementById(divOption.id).innerHTML+="<br/><br/>";
+       document.getElementById(divOption.id).innerHTML+="<br/>";
+        divOption.appendChild(divElementOne);
+        document.getElementById(divOption.id).innerHTML+="&nbsp;&nbsp;";
+        divOption.appendChild(divElementTwo);
+        document.getElementById(divOption.id).innerHTML+="<br/>";
+        
+        
+        
+    }
+
+
+    function deleteOption(div){
+        //Element with ID None 2
+        var divTemp = div.parentNode;
+        var divOptions = divTemp.getElementsByTagName("div");
+        var divOption;
+        var iter = 0;
+
+
+
+        while(iter < divOptions.length){
+            if(divOptions[iter].id.indexOf("answerChoices") != -1){
+                divOption = divOptions[iter];
+                break;
+            }
+            iter++;
+        }
+
+        //Get all elements with the tag INPUT
+        var divs = divTemp.getElementsByTagName("input");
+                        
+        var divElementOne = divs[divs.length-1];
+        var divElementTwo = divs[divs.length-2];        
+
+        document.getElementById(divElementTwo.id).remove();
+        document.getElementById(divElementOne.id).remove();
+
+        getRidOfAllSpaces(divTemp);
+    }
+
+    function getRidOfAllSpaces(div){
+        
+        $('div.'+div.id+' br').remove();
+    }
+    </script>
+</html>

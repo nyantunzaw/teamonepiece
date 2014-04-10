@@ -212,45 +212,75 @@
   <div class="col-md-1"></div>
   <div class="col-md-1"><a class = "navbar-btn btn btn-danger btn pull-right " id="cancelQuiz" role="button">Cancel</a></div>
   <div class="col-md-1"></div>
-  <div class="col-md-1"><a class = "navbar-btn btn  btn-success btn pull-right"  href="traineeViewModuleC.html" role="button">Save All & Submit</a></div>
+  <div class="col-md-1"><a class = "navbar-btn btn  btn-success btn pull-right" id="SaveSubmit"  role="button">Save All & Submit</a></div>
   <div class="col-md-1"></div>
 </div>
 </div>
 
 
- <!--E3f6ce-->
-          <div id="overlay"></div>
-            <div id="popup" style="background-color:#fafafa">
-   
-				<h3> Are you sure you want to cancel taking quiz?</h3>
-				<br><br>
-                <div class="row">
-                    <div class="col-md-4"></div>
-					 <div class="col-md-2"><a class = "navbar-btn btn  btn-success btn pull-right" id="goToQuiz" href="traineeViewModuleP.html" role="button">Yes</a></div>
-                    <div class="col-md-2"><a class = "navbar-btn btn btn-danger btn pull-right" id="CloseBtn" role="button">No</a></div>
-                    <div class="col-md-4"></div>
-					<br>
-                </div>  
-            </div>
-       <script>
-            window.onload = function() {
-            document.getElementById("cancelQuiz").onclick = function(){
-                  var overlay = document.getElementById("overlay");
-                  var popup = document.getElementById("popup");
-                  overlay.style.display = "block";
-                  popup.style.display = "block";
-              };
 
-            document.getElementById("CloseBtn").onclick = function(){
-                  var overlay = document.getElementById("overlay");
-                  var popup = document.getElementById("popup");
-                  overlay.style.display = "none";
-                  popup.style.display = "none";      
+	    <div id="overlay"></div>
+    <div id="popup"  style="background-color:#fafafa">
+        <br><br>
+        <h4 id="text"></h4>
+        <div class="row">
+
+
+            <div class="col-md-4"></div>
+            <div class="col-md-2"><a class = "navbar-btn btn btn-success btn pull-right" id="leftBtn" role="button"><p id="leftCommand"></p></a></div>
+			
+            <div class="col-md-2"><a class = "navbar-btn btn btn-primary btn pull-right" id="rightBtn" role="button"><p id="rightCommand"></p></a></div>
+            <div class="col-md-4"></div>
+        </div>
+
+    </div>
+	
+
+	
+	<script>
+	document.getElementById("cancelQuiz").onclick = function(){
+	document.getElementById("text").innerHTML="Are you sure you want to stop taking quiz?";
+            document.getElementById("leftCommand").innerHTML="Yes";
+			document.getElementById("rightCommand").innerHTML="No";
+            var overlay = document.getElementById("overlay");
+            var popup = document.getElementById("popup");
+            overlay.style.display = "block";
+            popup.style.display = "block";
+					  
+					  
+            document.getElementById("rightBtn").onclick = function(){
+                var overlay = document.getElementById("overlay");
+                var popup = document.getElementById("popup");
+                overlay.style.display = "none";
+                popup.style.display = "none";      
             }
-          };
-
-       </script>
-
+					
+            document.getElementById("leftBtn").onclick = function(){
+                window.location.href = 'traineeViewModuleP.html';
+            }
+        };
+		
+		
+	document.getElementById("SaveSubmit").onclick = function(){
+	document.getElementById("text").innerHTML="Please try again to pass the quiz!";
+            document.getElementById("leftCommand").innerHTML="Review Slides";
+			document.getElementById("rightCommand").innerHTML="Retake Quiz";
+            var overlay = document.getElementById("overlay");
+            var popup = document.getElementById("popup");
+            overlay.style.display = "block";
+            popup.style.display = "block";
+					  
+					  
+            document.getElementById("rightBtn").onclick = function(){
+                    window.location.href = 'takeQuizP.html';     
+            }
+					
+            document.getElementById("leftBtn").onclick = function(){
+                window.location.href = 'takeModule.html';
+            }
+        };
+		
+		</script>
 
    
 	</body>

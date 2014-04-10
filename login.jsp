@@ -21,7 +21,7 @@
             <div class="navbar navbar-custom navbar-static-top">
                     <div class="container">
                             <div class="navbar-brand">
-                                    <font color="white"> Welcome </font>
+                                    <!--<font color="white"> Welcome </font>-->
                             <!--	<img src="img/hugh.jpg" size="30px">-->
                             </div>
                             <!--
@@ -41,13 +41,13 @@
 
                                     <!--Below code is needed only for IDP -->
 
-
+                                    <!--
                                     <u1 class="nav navbar-nav navbar-right">
                                             <li class="active">
                                                     <a href="#"> Sign In </a>
                                             </li>
                                     </u1>
-
+                                       -->
                             </div>
                     </div>
             </div>

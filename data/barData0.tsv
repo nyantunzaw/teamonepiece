@@ -1,8 +1,9 @@
-letter	score
-Quiz1	1
-Quiz2	2
-Quiz3	3
-Quiz4	4
-Quiz5	3
-Quiz6	4
-Quiz7	5
+letter	score	name
+Quiz1	3	Crossborder Regulation
+Quiz2	4	Day Trading Rules
+Quiz3	4	ftc Trade Regulation
+Quiz4	3	Insider Trading Rules
+Quiz5	5	Commodity Future Trading
+Quiz6	4	Taxation on Trade
+Quiz7	3	Oil Trading Regulation
+Quiz8	4	Market Maker Rules

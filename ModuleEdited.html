@@ -82,36 +82,15 @@ and open the template in the editor.
                 <th>Quiz</th>
                 <th>Status</th>
             </tr>
+            
             <tr>
                 <td>1</td>
-                <td><span class="linktext"><a href="takeModule.html">Integrated Supply & Trading</a></span><span class="icons">
-                        <a href='editModule.html?name="Integrated Supply & Trading"&category="Compliance"&user="IT"'><img src="img/edit.jpg" width="25" height="30"  title="edit"/></a> <img src="img/delete.jpg" id="mDelete" width="25" height="25"  title="delete"/> 
-                    </span>                        
-                </td>                        
-                <td>Compliance</td>
-                <td>IT</td>
-                <td>2013</td>
-                <td>Terence [15/01/2014 15:30:00]</td>
-                <td><span class="linktext"><a href="takeQuiz.html">Quiz</a></span><span class="icons">
-                            <img src="img/edit.jpg" width="25" height="30" title="edit"/> <img src="img/delete.jpg" id="qDelete"  width="25" height="25"  title="delete"/>
-                        </span>                        
-                    </td>
-                <td>
-                    <!-- <select id="status1" onchange="changeStatus('status1');" >
-                        <option value="pending">Pending</option>
-                        <option value="publish" selected>Publish</option>
-                    </select> -->
-					<input type='checkbox' onclick='changeStatus(this);'>   Visible to trainees</label>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
                 <td><span class="linktext"><a href="takeModule.html">Risk Management</a></span><span class="icons">
                         <a href='editModule.html?name="Risk Management"&category="Risk"&user="All"'><img src="img/edit.jpg" width="25" height="30"  title="edit"/></a> <img src="img/delete.jpg" width="25" height="25"  title="delete"/> 
                     </span>                        
                 </td>
                 <td>Risk</td>
-                <td>All</td>
+                <td>IT</td>
                 <td>2012</td>
                 <td>Kevin [13/08/2013 10:20:40]</td>
                 <td>
@@ -120,9 +99,35 @@ and open the template in the editor.
                     </span>
                 </td>
                 <td>
-                    <input type='checkbox' onclick='changeStatus(this);'>   Visible to trainees</label>
+                    <select id="status2" onchange="changeStatus('status2');" >
+                        <option value="pending">Pending</option>
+                        <option value="publish">Publish</option>
+                    </select>
                 </td>
             </tr>
+			<tr>
+                    <td>2</td>
+                    <td><span class="linktext"><a href="takeModule.html">Trading Policies</a></span><span class="icons">
+                            <a href='editModule.html?name="Risk Management"&category="Risk"&user="All"'><img src="img/edit.jpg" width="25" height="30"  title="edit"/></a> <img src="img/delete.jpg" width="25" height="25"  title="delete"/> 
+                        </span>                        
+                    </td>
+                    <td>Trading</td>
+                    <td>All</td>
+                    <td>2014</td>
+                    <td>Kevin [13/03/2014 10:20:40]</td>
+                    <td>
+                        <span class="linktext"> <!-- <a href="takeQuiz.html">Quiz</a>--></span><span class="icons">
+						   <a href='editQuiz.html'> <img src="img/edit.jpg" width="25" height="30" title="edit"/> </a><img src="img/delete.jpg" id="qDelete"  width="25" height="25"  title="delete"/>
+						</span>
+                    </td>
+                    <td>
+						<select id="status2" onchange="changeStatus('status2');" >
+						  <option value="pending">Pending</option>
+						  <option value="publish" selected>Publish</option>
+						</select>
+                    </td>
+                </tr>
+
 
         </table>
     </div>
@@ -152,14 +157,8 @@ and open the template in the editor.
 
 
     <script>
-        function changeStatus(cb){
-		
-			if (cb.checked == true){
-				document.getElementById("text").innerHTML="Are you sure you want to publish the module so that it is visible to the trainees?";
-			} else {
-				document.getElementById("text").innerHTML="Are you sure you want to recall the module so that it is not visible to the trainees?";
-			}
-            
+        function changeStatus(id){
+            document.getElementById("text").innerHTML="Are you sure you want to change the status?";
             var overlay = document.getElementById("overlay");
             var popup = document.getElementById("popup");
             overlay.style.display = "block";
@@ -173,13 +172,11 @@ and open the template in the editor.
             }
 				  
             document.getElementById("no").onclick = function(){
-			
-				if (cb.checked == true){
-					cb.checked = false;
-				} else {
-					cb.checked = true;
-				}
-                
+                if ( document.getElementById(id).value == "pending"){
+                    document.getElementById(id).value = "publish";
+                } else if ( document.getElementById(id).value == "publish"){
+                    document.getElementById(id).value = "pending";
+                }
                 var overlay = document.getElementById("overlay");
                 var popup = document.getElementById("popup");
                 overlay.style.display = "none";

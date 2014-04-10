@@ -1,256 +1,384 @@
 <!Doctype html>
 <head>
-<title>Bootstrap</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="css/custombootstrap.css" rel="stylesheet">
-<link href="css/jumbotron-narrow.css" rel="stylesheet">
-<link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <title>Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/custombootstrap.css" rel="stylesheet">
+    <link href="css/jumbotron-narrow.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
 </head>
 
 <body>
-	<div class="navbar navbar-custom navbar-static-top ">
-		<div class="container">
-			<div class="navbar-brand">
-				<font color="white">Welcome, Terence Tan </font>
-				<!--	<img src="img/hugh.jpg" size="30px">-->
+    
+    <div class="navbar navbar-custom navbar-static-top">
+  		 <div class="col-md-8">
+		 <div class="container">
+				<div class="navbar-brand">
+				<img src="img/bplogo.jpg" width="25" height="30"> &nbsp;
+					<font color="white"> BP Employee Training Portal</font>
+				</div>	
 			</div>
-			<!--
-				The below button is only supposed to work when the window is resized
-				-->
-			<button class="navbar-toggle" data-toggle="collapse"
-				data-target=".navHeaderCollapse">
-				<!--
-					This adds the three horizontal lines on a collapsible menu
-					-->
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-
-			<div class="collapse navbar-collapse navHeaderCollapse">
-
-
-				<!--Below code is needed only for IDP -->
-
-
-				<ul class="nav navbar-nav navbar-right"> <!--	<li class="active">
-							<a href="#"> Sign In </a> -->
-				<li></li>
-				<li><a href="#"> Blog </a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown"> Manage<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Petrol</a></li>
-						<li><a href="#">Naphtha</a></li>
-						<li><a href="#">CNG</a></li>
-						<li><a href="#">LPG</a></li>
-					</ul></li>
-				<li><a href="#"> Sign Out </a></li>
-				</ul>
-
-			</div>
-		</div>
+		 </div>
+		 
+  		 <div class="col-md-1"></div>
+ 		 <div class="col-md-1"></div>
+		 <div class="col-md-2">
+		 <font color="white">  Welcome, Kelvin Chua!</font>
+		<br></br>
+		<span class="glyphicon glyphicon-home"></span>
+		 <a href="trainerViewModule.html" style="color: #FFFFFF">home</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="glyphicon glyphicon-off"></span>
+		 <a href="login.jsp" style="color: #FFFFFF">logout</a>
+		 </div> 	 
 	</div>
+ 	
+  
+    <div class="navbar navbar-custom navbar-fixed-bottom body">
+        <div class = "container">
+            
+            <div class="text-center">
+                
+            <a href="QuizCreated.html" class ="navbar-btn btn-primary btn">Save and Submit</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="trainerViewModule.html" class ="navbar-btn btn-danger btn">Cancel</a>
+            </div>
+        </div>
+    </div>
 
-	<div class="container">
-		<div class="jumbotronChibi well">
-			<h1>
-				<div class="text-center">
-					<!--<img src="img/bplogo.jpg" width="33" height="40"> &nbsp;-->
-					Create Quiz
-					<p>
-						<font size="2"> </font>
-					</p>
-				</div>
-			</h1>
-		</div>
-	</div>
-	<br />
-	<br />
-
-
-	<div class="container">
-
-		<!--  Carousel -->
-		<!--  consult Bootstrap docs at 
-            http://twitter.github.com/bootstrap/javascript.html#carousel -->
-		<div id="this-carousel-id" class="carousel slide">
-			<div class="carousel-inner">
-				<div class="item active">
-
-
-					<!-- if you want a larger column then write lg instead of md-->
-					<div class="col-md-1 "></div>
-					<div class="col-md-2 whiteWell">
-						<div class="center-text">
-							<h3>Question Type</h3>
-						</div>
-						<br />
-						<form action="">
-							<input type="radio" name="question" value="truefalse">&nbsp;True/False
-							<br /> <br /> <input type="radio" name="question" value="mcq">&nbsp;Multiple
-							Choice
-						</form>
-						<!--<p>babi ne podadi marvi che ne etle xD</p>-->
-						<!--<button class="btn btn-primary">Noan Ne Lafo Marva Click Here xD</button>-->
-					</div>
-					<div class="col-md-6 ">
-						<div class="text-center">
-							<h3>Question Number</h3>
-						</div>
-						<br />
-						<div class="container-fluid text-center">What is the full
-							form of SMU? (Hint: it is a university)</div>
-						<br />
-						<div class="col-md-3"></div>
-						<form action="">
-
-							<div class="col-md-6 text-left">
-								<input type="radio" name="question"
-									value="Singapore Management University">&nbsp;Singapore
-								Management University <br /> <br /> <input type="radio"
-									name="question" value="Sunnyvale Matrimony University">&nbsp;Sunnyvale
-								Matrimony University <br /> <br /> <input type="radio"
-									name="question" value="Sauron Mordor University">&nbsp;Sauron
-								Mordor University <br /> <br /> <input type="radio"
-									name="question" value="Singapore Mandarin University">&nbsp;Singapore
-								Mandarin University
-							</div>
-						
-						</form>
-						<div class="col-md-2"> </div>
-						
-						<div class="col-md-1 center-text">
-							<form>
-								Correct Answer
-								<select>
- 									<option value="volvo">Singapore Management University</option>
-  									<option value="saab">Sunnyvale Matrimony University</option>
-  									<option value="mercedes">Sauron Mordor University</option>
-  									<option value="audi">Singapore Mandarin University</option>
-								</select>
-							</form>
-						</div>
-					
-					<br/>
-					<br/>
-					</div>
-				</div>
-				<div class="item">
-
-					<!-- if you want a larger column then write lg instead of md-->
-					<div class="col-md-1 "></div>
-					<div class="col-md-2 whiteWell">
-						<div class="center-text">
-							<h3>Question Type</h3>
-						</div>
-						<br />
-						<form action="">
-							<input type="radio" name="truefalse" value="question">&nbsp;True/False
-							<br /> <br /> <input type="radio" name="question" value="mcq">&nbsp;Multiple
-							Choice
-						</form>
-						<!--<p>babi ne podadi marvi che ne etle xD</p>-->
-						<!--<button class="btn btn-primary">Noan Ne Lafo Marva Click Here xD</button>-->
-					</div>
-					<div class="col-md-6 ">
-						<div class="text-center">
-							<h3>Question Number</h3>
-						</div>
-						<br />
-						<div class="container-fluid text-center">What is the full
-							form of SMU? (Hint: it is a university)</div>
-						<br />
-						<div class="col-md-3"></div>
-						<form action="">
-
-							<div class="col-md-6 text-left">
-								<input type="radio" name="question"
-									value="Singapore Management University">&nbsp;Singapore
-								Management University <br /> <br /> <input type="radio"
-									name="question" value="Sunnyvale Matrimony University">&nbsp;Sunnyvale
-								Matrimony University <br /> <br /> <input type="radio"
-									name="question" value="Sauron Mordor University">&nbsp;Sauron
-								Mordor University <br /> <br /> <input type="radio"
-									name="question" value="Singapore Mandarin University">&nbsp;Singapore
-								Mandarin University
-							</div>
-
-						</form>
-						<br /> <br />
-					</div>
-				</div>
-				<div class="item">
-
-					<!-- if you want a larger column then write lg instead of md-->
-					<div class="col-md-1 "></div>
-					<div class="col-md-2 whiteWell">
-						<div class="center-text">
-							<h3>Question Type</h3>
-						</div>
-						<br />
-						<form action="">
-							<input type="radio" name="truefalse" value="question">&nbsp;True/False
-							<br /> <br /> <input type="radio" name="question" value="mcq">&nbsp;Multiple
-							Choice
-						</form>
-						<!--<p>babi ne podadi marvi che ne etle xD</p>-->
-						<!--<button class="btn btn-primary">Noan Ne Lafo Marva Click Here xD</button>-->
-					</div>
-					<div class="col-md-6 ">
-						<div class="text-center">
-							<h3>Question Number</h3>
-						</div>
-						<br />
-						<div class="container-fluid text-center">What is the full
-							form of SMU? (Hint: it is a university)</div>
-						<br />
-						<div class="col-md-3"></div>
-						<form action="">
-
-							<div class="col-md-6 text-left">
-								<input type="radio" name="question"
-									value="Singapore Management University">&nbsp;Singapore
-								Management University <br /> <br /> <input type="radio"
-									name="question" value="Sunnyvale Matrimony University">&nbsp;Sunnyvale
-								Matrimony University <br /> <br /> <input type="radio"
-									name="question" value="Sauron Mordor University">&nbsp;Sauron
-								Mordor University <br /> <br /> <input type="radio"
-									name="question" value="Singapore Mandarin University">&nbsp;Singapore
-								Mandarin University
-							</div>
-
-						</form>
-						<br /> <br />
-						
-						</ul></li>
-					</div>
-
-				</div>
-			</div>
-			<!-- .carousel-inner -->
-			<!--  next and previous controls here
-              href values must reference the id for this carousel -->
-			<a class="carousel-control left glyphSpan" href="#this-carousel-id"
-				data-slide="prev"> <span
-				class="glyphicon glyphicon-chevron-left"></span>
-			</a> <a class="carousel-control right" href="#this-carousel-id"
-				data-slide="next"> <span
-				class="glyphicon glyphicon-chevron-right"></span>
-			</a>
-		</div>
-		<br/>
-		
-		<!-- end carousel -->
-
-		
-		
-		<script src="http://code.jquery.com/jquery-1.10.2.min.js"
-			type="text/javascript"> </script>
-		<script src="js/bootstrap.js" type="text/javascript"> </script>
-		<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
-		<!-- Bootstrap jQuery plugins compiled and minified -->
+    <div class="container">
+        <div class="jumbotronChibi whitewell">
+            <div class="text-center">
+                <h3>
+                
+                    <!--<img src="img/bplogo.jpg" width="33" height="40"> &nbsp;-->
+                    Create Quiz
+                    
+                        <font size="2"> </font>
+                    
+                    </h3>
+                </div>
+        </div>
+    </div>
+    <br />
+    <br />
 
 
-	</div>
+    <div class="container" id="mainQuestion">
+
+        <!-- if you want a larger column then write lg instead of md-->
+        <div class="col-md-1 "></div>
+        <div class="col-md-2 whiteWell" id="questionTypeSpace">
+            <div class="center-text">
+                <h4>Question Type</h4>
+            </div>
+            <br />
+            <form action="" id="questionType">
+                <input type="radio" id="truefalse" name="question" onclick="refreshAnswersForRadio(this)" value="truefalse">&nbsp;True/False
+                <br /> 
+                <br /> 
+                <input type="radio" id="mcq" name="question" onclick="refreshAnswersForMCQ(this)" value="mcq"checked>&nbsp;Multiple Choice
+                <!--
+                <select id="ddvalue">
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>  
+                </select>	
+                -->
+            </form>
+
+        </div>
+
+        <div class="col-md-6 " id="none1">
+            <div class="text-center">
+                <h4>Question </h4>
+            </div>
+            <br />
+            <br/>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-6 text-left" id="opParent">
+                Q: &nbsp;<input type="text" name="question" value="">
+                <br/>
+                <br/>
+                <div id="options">
+                    <input type="checkbox" id="chkbx1" name="question">&nbsp;
+                    <input type="text" id="ques1" name="question" value="">
+                    <br/>
+                    <br/>
+                    <input type="checkbox" id="chkbx2" name="question" value="">&nbsp;
+                    <input type="text" id="ques2" name="question" value="">
+                    <br/>
+                    <br/>
+                    <input type="checkbox" id="chkbx3" name="question" value="">&nbsp;
+                    <input type="text" id="ques3" name="question" value="">		
+                    <br/>
+                    <br/>
+                    <input type="checkbox" id="chkbx4" name="question" value="">&nbsp;
+                    <input type="text" id="ques4" name="question" value="">	
+                </div>
+                <br/>
+                <a onclick="addOption(this)">[Add Option]</a>
+                <a onclick="deleteOption(this)">[Delete Option]</a>	
+            </div>
+        </div>
+        <div class="col-md-4 text-right" id="none3"></div>
+        <div class="col-md-4 text-right" id="none4">
+            <br/>
+            <br/>
+            <form id="none5">
+                <input type="button" value="Add Question" onclick="addQuestion()"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                <input type="button" value="Remove Question" id="none6" onclick="removeQuestion(this)">
+            </form>
+            <br/>
+            <br/>
+        </div>
+        <br/>
+        <!-- end carousel -->
+
+    </div>
+    <div id="optionsForTrueFalse" style="display:none;">
+            
+            <input type="radio" id="chkbx1" name="question">
+            &nbsp;
+            <input type="text" id="ques1" name="question" value=""> 
+            <br/>
+            <br/>
+            <input type="radio" id="chkbx2" name="question">
+            &nbsp;
+            <input type="text" id="qques2" name="question" value="">
+            
+    </div>
+    <div id="optionsForMCQ" style="display:none;">
+
+        <input type="checkbox" id="chkbx1" name="question">&nbsp;
+        <input type="text" id="ques1" name="question" value="">
+        <br/>
+        <br/>
+        <input type="checkbox" id="chkbx2" name="question" value="">&nbsp;
+        <input type="text" id="ques2" name="question" value="">
+        <br/>
+        <br/>
+        <input type="checkbox" id="chkbx3" name="question" value="">&nbsp;
+        <input type="text" id="ques3" name="question" value="">		
+        <br/>
+        <br/>
+        <input type="checkbox" id="chkbx4" name="question" value="">&nbsp;
+        <input type="text" id="ques4" name="question" value="">	
+
+    </div>
+
 </body>
+
+<!--<script src="http://code.jquery.com/jquery-1.10.2.min.js"type="text/javascript"> </script>-->
+<script src="js/bootstrap.js" type="text/javascript"> </script>
+<script type="text/javascript">window.jQuery 
+        || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+
+<script type="text/javascript">
+    var i = 0;
+    var q = 4;
+    var chkbxQuesCounter = 5;
+    var questionCounter = 5;
+
+    function addQuestion(){
+        var original = document.getElementById('mainQuestion');
+        var clone = original.cloneNode(true); // "deep" clone
+        clone.id = "mainQuestion" + ++i; // there can only be one element with an ID
+        var divTags = clone.getElementsByTagName("*");
+        var iter = 0;
+        while(iter < divTags.length){
+            if(divTags[iter].id.indexOf("options") != -1){
+                var toReplace = divTags[iter];
+                divTags[iter].id = "options"+i;
+                clone.replaceChild(toReplace , divTags[iter]);
+            }
+            if(divTags[iter].id.indexOf("opParent") != -1){
+                var toReplace = divTags[iter];
+                divTags[iter].id = "opParent"+i;
+                clone.replaceChild(toReplace , divTags[iter]);
+            }
+            if(divTags[iter].id.indexOf("chkbx") != -1){
+                var toReplace = divTags[iter];
+                divTags[iter].id = "chkbx"+chkbxQuesCounter;
+                clone.replaceChild(toReplace , divTags[iter]);	
+            }
+            if(divTags[iter].id.indexOf("ques") != -1){
+                var toReplace = divTags[iter];
+                divTags[iter].id = "ques"+chkbxQuesCounter;
+                chkbxQuesCounter++;
+                clone.replaceChild(toReplace , divTags[iter]);	
+            }
+            iter++;
+        }
+        original.parentNode.appendChild(clone);
+    }
+
+    function removeQuestion(div){
+        var parent = findIdOfParent(div);
+        document.getElementById(parent.id).remove();
+    }
+			
+    function findIdOfParent(obj) {
+        var o = obj;
+        var prev;
+        while(o != null) {
+            if(o.parentNode==null || o.parentNode.id == ""){
+                prev=o;
+                break;
+            }
+            o=o.parentNode;
+        }
+        return prev;
+    }	
+
+    function refreshAnswersForMCQ(div){
+        var bapa = findIdOfParent(div);
+        var iter = 0;
+
+        var divTags = bapa.getElementsByTagName("div");
+				
+        var optionsForMCQ = document.getElementById("optionsForMCQ");
+		
+				
+        divTags = bapa.getElementsByTagName("*");
+        var divTagToReplace;
+
+        iter = 0;
+        while(iter < divTags.length){
+            if(divTags[iter].id.indexOf("options") != -1){
+                //Clone the hard coded node for use
+                divTagToReplace = optionsForMCQ.cloneNode(true); // "deep" clone
+                						
+                //Extract the number from the string
+                divTagToReplace.id = "options"+extractNumberFromString(divTags[iter].id);
+				//alert("Div tage to replace  " divTagToReplace.id);
+                //bapa.getElementById(divTags[iter].id).id += "remove";
+                divTagToReplace.style.display = 'block';
+                divTags[iter].parentNode.replaceChild(divTagToReplace , divTags[iter]);
+                
+                //divTagToReplace.id = "options"+extractNumberFromString(divTags[iter].id);
+				break;
+            }
+            iter++;
+        }
+
+    }
+
+    function refreshAnswersForRadio(div){
+        var bapa = findIdOfParent(div);
+        var iter = 0;
+
+        var divTags = bapa.getElementsByTagName("div");
+				
+        var optionsForTrueFalse = document.getElementById("optionsForTrueFalse");
+				
+				
+        divTags = bapa.getElementsByTagName("div");
+        
+        var divTagToReplace;
+
+        iter = 0;
+        while(iter < divTags.length){
+            if(divTags[iter].id.indexOf("options") != -1){
+                //Clone the hard coded node for use
+                divTagToReplace = optionsForTrueFalse.cloneNode(true); // "deep" clone
+						
+                //Extract the number from the string
+                divTagToReplace.id = "options"+extractNumberFromString(divTags[iter].id);
+						
+                //bapa.getElementById(divTags[iter].id).id += "remove";
+                		
+                divTags[iter].parentNode.replaceChild(divTagToReplace , divTags[iter]);
+                divTagToReplace.style.display = 'block';
+                divTagToReplace.id = "options"+extractNumberFromString(divTags[iter].id);
+						
+                break;
+            }
+            iter++;
+        }
+
+        // change the ID of options to the latest value of i
+        // in its place append to none 2 the true false thingy which must be kept turned to visible.
+    }
+ 
+
+    function extractNumberFromString(str){
+        var thenum = str.replace( /^\D+/g, '');
+        
+        return thenum;
+    }
+
+    function addOption(div){
+        //Element with ID None 2
+        var divTemp = div.parentNode;
+				
+        var divOptions = divTemp.getElementsByTagName("div");
+        var divOption;
+        var iter = 0;
+
+        while(iter < divOptions.length){
+            if(divOptions[iter].id.indexOf("options") != -1){
+                divOption = divOptions[iter];
+                
+                break;
+            }
+            iter++;
+        }
+
+        
+        //Get all elements with the tag INPUT
+        var divs = divTemp.getElementsByTagName("input");
+
+        var divElementOne = divs[divs.length-1];
+        var divElementTwo = divs[divs.length-2];
+
+        var cloneOne = divElementOne.cloneNode(true); // "deep" clone
+        var cloneTwo = divElementTwo.cloneNode(true);
+
+        //insert robust code later to ensure that all numbers are removed (the current code will generate problems if IDs go in double digits.) document.getElementById('var_div').setAttribute('id',val)
+        cloneOne.id = "chkbx"+chkbxQuesCounter;//cloneOne.id.substring(0,cloneOne.id.length-1) + ++q;
+        cloneTwo.id = "ques"+chkbxQuesCounter;//cloneTwo.id.substring(0,cloneTwo.id.length-1) + q;
+				
+        chkbxQuesCounter++;
+        		
+        document.getElementById(divOption.id).innerHTML+="&nbsp;&nbsp;&nbsp;";
+				
+        document.getElementById(divOption.id).innerHTML+="<br/><br/>";
+
+        divOption.appendChild(cloneTwo);
+        divOption.appendChild(cloneOne);
+        /*
+				
+         */
+
+    }
+
+    function deleteOption(div){
+                //Element with ID None 2
+                var divTemp = div.parentNode;
+                var divOptions = divTemp.getElementsByTagName("div");
+                var divOption;
+                var iter = 0;
+
+                while(iter < divOptions.length){
+                    if(divOptions[iter].id.indexOf("options") != -1){
+                        divOption = divOptions[iter];
+                        break;
+                    }
+                    iter++;
+                }
+
+                //Get all elements with the tag INPUT
+                var divs = divTemp.getElementsByTagName("input");
+                iter=0;
+                        
+                var divElementOne = divs[divs.length-1];
+                var divElementTwo = divs[divs.length-2];        
+                
+                document.getElementById(divElementTwo.id).remove();
+                document.getElementById(divElementOne.id).remove();
+            }
+</script> 	
 </html>
